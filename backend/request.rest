@@ -1,0 +1,85 @@
+GET http://localhost:5000/users 
+###
+GET http://localhost:5000/users/3cad923d-56fa-48b0-9235-3524a152f5e0
+###
+POST http://localhost:5000/users 
+Content-Type: application/json
+
+{
+    "name" : "admin3",
+    "email" : "admin3@gmail.com",
+    "password" : "admin",
+    "confPassword" : "admin",
+    "role" : "admin"
+}
+###
+PATCH http://localhost:5000/users/407625f6-6dee-4231-b0a9-28144c6cc5b1
+Content-Type: application/json
+
+{
+    "name" : "usersatu",
+    "email" : "user1@gmail.com",
+    "password" : "user",
+    "confPassword" : "user",
+    "role" : "user"
+}
+###
+DELETE http://localhost:5000/users/407625f6-6dee-4231-b0a9-28144c6cc5b1 
+###
+
+# login sebagai user
+POST http://localhost:5000/login 
+Content-Type: application/json
+
+{
+    "email" : "user1@gmail.com",
+    "password" : "user"
+}
+###
+#Login sebagai admin
+POST http://localhost:5000/login 
+Content-Type: application/json
+
+{
+    "email" : "admin1@gmail.com",
+    "password" : "admin"
+}
+###
+# me
+GET http://localhost:5000/me
+###
+# logout
+DELETE http://localhost:5000/logout
+
+###
+# GET ALL DATA PRODUCT
+GET http://localhost:5000/products
+
+###
+# GET SINGLE DATA PRODUCT
+GET http://localhost:5000/products/27485817-7c6c-4f49-844e-eaa572200be0
+
+###
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name" : "Product admin 2",
+    "price" : "222"
+}
+###
+PATCH  http://localhost:5000/products/27485817-7c6c-4f49-844e-eaa572200be0
+Content-Type: application/json
+
+{
+    "name" : "Product admin updated",
+    "price" : "222"
+}
+###
+DELETE http://localhost:5000/products/27485817-7c6c-4f49-844e-eaa572200be0
+Content-Type: application/json
+
+{
+    "name" : "Product admin updated",
+    "price" : "222"
+}
